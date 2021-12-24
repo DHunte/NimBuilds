@@ -37,7 +37,7 @@ jobs:
           
       - name: zip files
         run: |
-          zip -r ./nim-1.6.2/nim-$VERSION-linux-$ARCHITECTURE.zip .
+          zip -r ./nim-$VERSION-linux-$ARCHITECTURE.zip .
           
       - uses: actions/upload-artifact@v2
         with:
