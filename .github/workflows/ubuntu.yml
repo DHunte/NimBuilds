@@ -39,12 +39,10 @@ jobs:
       - name: zip files
         run: |
           zip -r nim-$VERSION-linux-$ARCHITECTURE.zip .
-          ls
-          $PWD
           
       - uses: actions/upload-artifact@v2
         with:
           name: nim-$VERSION-linux-$ARCHITECTURE
-          path: nim-$VERSION-linux-$ARCHITECTURE.zip
+          path: ./nim-$VERSION-linux-$ARCHITECTURE.zip
 
   
