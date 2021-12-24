@@ -41,7 +41,7 @@ jobs:
           
       - uses: actions/upload-artifact@v2
         with:
-          name: nim-1.6.2-linux-x64
+          name: nim-1.6.2
           path: ./nim-1.6.2-linux-x64.zip
 
   
