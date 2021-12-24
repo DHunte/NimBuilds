@@ -36,6 +36,10 @@ jobs:
           rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           zip -r nim-$VERSION-linux-$ARCHITECTURE.zip .
           
+      - name: zip files
+        run: |
+          zip -r nim-$VERSION-linux-$ARCHITECTURE.zip .
+          
       - uses: actions/upload-artifact@v2
         with:
           name: nim-$VERSION-linux-$ARCHITECTURE
