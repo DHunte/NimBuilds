@@ -42,7 +42,7 @@ jobs:
           
       - uses: actions/upload-artifact@v2
         with:
-          name: nim-$VERSION-linux-$ARCHITECTURE
+          name: nim-1.6.2-linux-x64
           path: ./nim-1.6.2-linux-x64.zip
 
   
