@@ -34,7 +34,7 @@ jobs:
           wget https://nim-lang.org/download/nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           tar -xf nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz
-          zip -r nim-$VERSION-linux-$ARCHITECTURE.zip .
+          zip -r ./nim-1.6.2/nim-$VERSION-linux-$ARCHITECTURE.zip .
           
       - name: zip files
         run: |
