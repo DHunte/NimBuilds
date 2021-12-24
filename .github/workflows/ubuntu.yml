@@ -19,7 +19,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+      VERSION: 1.6.2
+      PLATFORM: linux
+      ARCHITECTURE: x64
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -29,6 +32,14 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt install xz-utils
-          wget https://nim-lang.org/download/nim-1.6.2-linux_x64.tar.xz
-          tar -xf nim-1.6.2-linux_x64.tar.xz
+          wget https://nim-lang.org/download/nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
+          tar -xf nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
+          rm nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
+          zip -r nim-$VERSION-$PLATFORM_$ARCHITECTURE.zip .
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: nim-$VERSION-$PLATFORM-$ARCHITECTURE
+          path: nim-$VERSION-$PLATFORM_$ARCHITECTURE.zip
+
   
