@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VERSION: 1.6.2
-      PLATFORM: linux
+      PLATFORM_LINUX: linux
       ARCHITECTURE: x64
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,14 +32,14 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt install xz-utils
-          wget https://nim-lang.org/download/nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
-          tar -xf nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
-          rm nim-$VERSION-$PLATFORM_$ARCHITECTURE.tar.xz
-          zip -r nim-$VERSION-$PLATFORM_$ARCHITECTURE.zip .
+          wget https://nim-lang.org/download/nim-$VERSION-$PLATFORM_LINUX_$ARCHITECTURE.tar.xz
+          tar -xf nim-$VERSION-$PLATFORM_LINUX_$ARCHITECTURE.tar.xz
+          rm nim-$VERSION-$PLATFORM_LINUX_$ARCHITECTURE.tar.xz
+          zip -r nim-$VERSION-$PLATFORM_LINUX_$ARCHITECTURE.zip .
           
       - uses: actions/upload-artifact@v2
         with:
-          name: nim-$VERSION-$PLATFORM-$ARCHITECTURE
-          path: nim-$VERSION-$PLATFORM_$ARCHITECTURE.zip
+          name: nim-$VERSION-$PLATFORM_LINUX-$ARCHITECTURE
+          path: nim-$VERSION-$PLATFORM_LINUX-$ARCHITECTURE.zip
 
   
