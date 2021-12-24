@@ -33,11 +33,14 @@ jobs:
           sudo apt install xz-utils
           wget https://nim-lang.org/download/nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           tar -xf nim-$VERSION-linux_$ARCHITECTURE.tar.xz
-          rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz
+          mkdir nim
+          rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz -C ./nim
           
       - name: zip files
         run: |
+          cd nim
           zip -r ./nim-$VERSION-linux-$ARCHITECTURE.zip .
+          mv nim-$VERSION-linux-$ARCHITECTURE.zip ..
           
       - uses: actions/upload-artifact@v2
         with:
