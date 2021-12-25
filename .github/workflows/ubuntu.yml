@@ -33,6 +33,7 @@ jobs:
           cd nim
           ls
           zip -r ./nim-linux-$VERSION_$ARCHITECTURE.zip .
+          ls
           mv nim-linux-$VERSION_$ARCHITECTURE.zip ..
           ls
           cd ..
