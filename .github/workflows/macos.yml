@@ -24,9 +24,9 @@ jobs:
           sh build.sh
           rm -r c_code
           cd ..
-          zip -r nim-1.6.2.zip nim-1.6.2
-          
+          zip -r nim-darwin-1.6.2.zip nim-1.6.2
+
       - uses: actions/upload-artifact@v2
         with:
-          name: nim-1.6.2
-          path: ./nim-1.6.2.zip
+          name: nim-darwin-1.6.2.zip
+          path: ./nim-darwin-1.6.2.zip
