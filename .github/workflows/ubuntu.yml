@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ ]
   pull_request:
-    branches: [ main ]
+    branches: [  ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,6 +34,7 @@ jobs:
           wget https://nim-lang.org/download/nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           mkdir nim
           tar -xf nim-$VERSION-linux_$ARCHITECTURE.tar.xz -C ./nim
+          cd ./nim && tar xopf nim-$VERSION-linux_$ARCHITECTURE.tar && cd ..
           rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           
       - name: zip files
