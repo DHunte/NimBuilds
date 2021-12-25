@@ -6,3 +6,12 @@
 
 This project is a place-holder containing pipelines to execute builds of the nim programming language. 
 The goal of the project is simply to mirror, build and release the current version of nim for all platforms.
+
+## Why?
+
+This was simply an easier way to reduce the number of CI steps required for multi-platform builds using nim as the official
+page does not include pre-built binaries for macos and so requires builds steps prior to installation.
+
+## Notes
+
+The windows and linux binaries are directly downloaded as they are already available here https://nim-lang.org/install.html
