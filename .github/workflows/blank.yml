@@ -45,3 +45,10 @@ jobs:
           # `true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`
           draft: false      
           
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body: Updated version of nim
+          tag_name: 1.6.2
+          files: nim-1.6.2_x64.zip
