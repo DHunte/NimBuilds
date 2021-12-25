@@ -28,3 +28,10 @@ jobs:
           tar xopf nim-1.6.2.tar
           cd nim-1.6.2
           sh build.sh
+          cd ..
+          zip -r nim-1.6.2.zip nim-1.6.2
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: nim-1.6.2
+          path: ./nim-1.6.2.zip
