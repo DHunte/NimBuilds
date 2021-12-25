@@ -32,13 +32,13 @@ jobs:
         run: |
           cd nim
           ls
-          zip -r ./nim-linux-$VERSION_$ARCHITECTURE.zip .
+          zip -r ./nim-linux-$VERSION-$ARCHITECTURE.zip .
           ls
-          mv nim-linux-$VERSION_$ARCHITECTURE.zip ..
+          mv nim-linux-$VERSION-$ARCHITECTURE.zip ..
           ls
           cd ..
 
       - uses: actions/upload-artifact@v2
         with:
           name: nim-1.6.2
-          path: ./nim-linux-1.6.2_x64.zip
+          path: ./nim-linux-1.6.2-x64.zip
