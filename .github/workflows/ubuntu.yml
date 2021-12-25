@@ -32,8 +32,8 @@ jobs:
         run: |
           sudo apt install xz-utils
           wget https://nim-lang.org/download/nim-$VERSION-linux_$ARCHITECTURE.tar.xz
-          tar -xf nim-$VERSION-linux_$ARCHITECTURE.tar.xz -C ./nim
           mkdir nim
+          tar -xf nim-$VERSION-linux_$ARCHITECTURE.tar.xz -C ./nim
           rm nim-$VERSION-linux_$ARCHITECTURE.tar.xz
           
       - name: zip files
