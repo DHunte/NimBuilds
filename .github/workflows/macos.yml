@@ -28,5 +28,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: nim-darwin-1.6.2.zip
+          name: nim-darwin-1.6.2-x64.zip
           path: ./nim-darwin-1.6.2-x64.zip
