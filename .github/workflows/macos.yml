@@ -24,4 +24,4 @@ jobs:
         run: |
           wget https://nim-lang.org/download/nim-1.6.2.tar.xz
           xz -d nim-1.6.2.tar.xz
-          ls
+          cd nim-1.6.2 && sh build.sh
